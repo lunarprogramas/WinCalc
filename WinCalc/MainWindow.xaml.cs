@@ -28,16 +28,5 @@ namespace WinCalc
         {
             this.InitializeComponent();
         }
-
-        private void myButton_Click(object sender, RoutedEventArgs e)
-        {
-            myButton.Content = "Clicked";
-        }
-
-        private void textAdded(object sender, RoutedEventArgs e)
-        {
-            textOutputBlock.Text = testInput.Text;
-            Debug.WriteLine("Hi");
-        }
     }
 }
