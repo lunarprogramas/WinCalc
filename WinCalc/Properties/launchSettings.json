@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WinCalc (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "WinCalc (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
