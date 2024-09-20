@@ -292,7 +292,7 @@ namespace WinCalc
                 this.mathOperation("ReturnValue");
             }
         }
-        // Figure out why the sidebar is fucking huge. L
+        // Figure out why the sidebar is fucking huge.
         public void mathOperation(string input) 
         {
             if (input == "N/A")
