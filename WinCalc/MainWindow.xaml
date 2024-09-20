@@ -7,11 +7,46 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBlock Name="calculatorResult"></TextBlock>
-        <Button x:Name="calulatorReset">Reset</Button>
-       <Button x:Name="Add">Add</Button>
-        <Button x:Name="Subtract">Subtract</Button>
-        <Button x:Name="Divide">Divide</Button>
-    </StackPanel>
+
+
+    <Grid>
+        <!-- First StackPanel -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+            <TextBlock Name="calculatorResult" Margin="0,-40,-350,0" HorizontalAlignment="Center">No calulation inputed.</TextBlock>
+            <Button x:Name="calulatorReset" Content="Reset"></Button>
+            <Button x:Name="Add" Click="operation_Add" Content="Add"></Button>
+            <Button x:Name="Subtract" Content="Subtract"></Button>
+            <Button x:Name="Divide" Content="Divide"></Button>
+            <Button x:Name="Sum" Click="operation_Sum" Content="="></Button>
+            <Button x:Name="Clear" Click="ClearContents" Content="Clear"></Button>
+        </StackPanel>
+
+        <!-- Calculator Number Buttons -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10" Margin="0,110,0,0">
+            <Button x:Name="One" Click="Add_One" Content="1" Width="100" Height="50"></Button>
+            <Button x:Name="Two" Click="Add_Two" Content="2" Width="100" Height="50"></Button>
+            <Button x:Name="Three" Click="Add_Three" Content="3" Width="100" Height="50"></Button>
+            <Button x:Name="Four" Click="Add_Four" Content="4" Width="100" Height="50"></Button>
+            <Button x:Name="Five" Click="Add_Five" Content="5" Width="100" Height="50"></Button>
+            <Button x:Name="Six" Click="Add_Six" Content="6" Width="100" Height="50"></Button>
+            <Button x:Name="Seven" Click="Add_Seven" Content="7" Width="100" Height="50"></Button>
+            <Button x:Name="Eight" Click="Add_Eight" Content="8" Width="100" Height="50"></Button>
+            <Button x:Name="Nine" Click="Add_Nine" Content="9" Width="100" Height="50"></Button>
+            <Button x:Name="Zero" Click="Add_Zero" Content="0" Width="100" Height="50"></Button>
+        </StackPanel>
+
+        <!-- Second StackPanel -->
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel>
+                <!-- Add multiple buttons to make content overflow -->
+                <TextBlock Text="Calculator History Results" FontSize="20" Margin="10" />
+                <TextBlock Text="Extra Button 3" Margin="10" Height="40"/>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Third StackPanel -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,100">
+            <Button x:Name="ClearHistory" Content="Clear History"></Button>
+        </StackPanel>
+    </Grid>
 </Window>
