@@ -12,9 +12,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Xml.Serialization;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
+using System.Drawing;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info
@@ -35,6 +37,8 @@ namespace WinCalc
         public MainWindow()
         {
             this.InitializeComponent();
+            this.AppWindow.Title = "WinCalc";
+            this.AppWindow.SetIcon();
         }
 
         // function for each single math button
@@ -267,6 +271,7 @@ namespace WinCalc
                 selectedValue1 = "";
                 selectedValue2 = "";
                 calculatorResult.Text = "No calculation inputed.";
+                requireSecondValues = false;
             }
         }
 
@@ -292,6 +297,17 @@ namespace WinCalc
                 this.mathOperation("ReturnValue");
             }
         }
+
+        private void operation_Sub(object sender, RoutedEventArgs e)
+        {
+            if (fucked && !requireSecondValues)
+            {
+                return;
+            } else
+            {
+                this.mathOperation("Subtract");
+            }
+        }
         // Figure out why the sidebar is fucking huge.
         public void mathOperation(string input) 
         {
@@ -311,7 +327,18 @@ namespace WinCalc
                 {
                     int value = int.Parse(selectedValue1) + int.Parse(selectedValue2);
                     calculatorResult.Text = value.ToString();
-                }
+                } else if (mathMode == "Subtract")
+                    {
+                        int value = int.Parse(selectedValue1) - int.Parse(selectedValue2);
+                        calculatorResult.Text = value.ToString();
+                        requireSecondValues = false;
+                    }
+            }
+            else if (input == "Subtract")
+            {
+                requireSecondValues = true;
+                mathMode = "Subtract";
+                Subtract.Background = new SolidColorBrush(Colors.LightGray);
             }
         }
     }

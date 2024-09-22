@@ -5,7 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WinCalc"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Ico
 
 
 
@@ -15,8 +16,9 @@
             <TextBlock Name="calculatorResult" Margin="0,-40,-350,0" HorizontalAlignment="Center">No calulation inputed.</TextBlock>
             <Button x:Name="calulatorReset" Content="Reset"></Button>
             <Button x:Name="Add" Click="operation_Add" Content="Add"></Button>
-            <Button x:Name="Subtract" Content="Subtract"></Button>
+            <Button x:Name="Subtract" Click="operation_Sub" Content="Subtract"></Button>
             <Button x:Name="Divide" Content="Divide"></Button>
+            <Button x:Name="Times" Content="Times"></Button>
             <Button x:Name="Sum" Click="operation_Sum" Content="="></Button>
             <Button x:Name="Clear" Click="ClearContents" Content="Clear"></Button>
         </StackPanel>
@@ -35,14 +37,14 @@
             <Button x:Name="Zero" Click="Add_Zero" Content="0" Width="100" Height="50"></Button>
         </StackPanel>
 
-        <!-- Second StackPanel -->
+        <!-- Second StackPanel --><!--
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
             <StackPanel>
-                <!-- Add multiple buttons to make content overflow -->
+                --><!-- Add multiple buttons to make content overflow --><!--
                 <TextBlock Text="Calculator History Results" FontSize="20" Margin="10" />
                 <TextBlock Text="Extra Button 3" Margin="10" Height="40"/>
             </StackPanel>
-        </ScrollViewer>
+        </ScrollViewer>-->
 
         <!-- Third StackPanel -->
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,100">
