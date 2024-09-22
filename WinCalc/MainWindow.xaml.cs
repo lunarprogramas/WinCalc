@@ -38,7 +38,7 @@ namespace WinCalc
         {
             this.InitializeComponent();
             this.AppWindow.Title = "WinCalc";
-            this.AppWindow.SetIcon();
+            this.AppWindow.SetIcon("C:\\Users\\janko\\Source\\Repos\\lunarprogramas\\WinCalc\\WinCalc\\Assets\\CalcWin200.png");
         }
 
         // function for each single math button

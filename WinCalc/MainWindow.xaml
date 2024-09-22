@@ -5,22 +5,24 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WinCalc"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Ico
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
 
 
 
     <Grid>
+        <!--Calucator Result Stuff-->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0" Spacing="0">
+            <TextBox Name="calculatorResult" IsFocusEngaged="False" SelectionHighlightColor="DarkGray" Background="DarkGray" IsReadOnly="True" PlaceholderText="No calulation inputed."></TextBox>
+        </StackPanel>
+
         <!-- First StackPanel -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
-            <TextBlock Name="calculatorResult" Margin="0,-40,-350,0" HorizontalAlignment="Center">No calulation inputed.</TextBlock>
-            <Button x:Name="calulatorReset" Content="Reset"></Button>
+            <Button x:Name="calulatorReset" Click="ClearContents" Content="Reset"></Button>
             <Button x:Name="Add" Click="operation_Add" Content="Add"></Button>
             <Button x:Name="Subtract" Click="operation_Sub" Content="Subtract"></Button>
             <Button x:Name="Divide" Content="Divide"></Button>
             <Button x:Name="Times" Content="Times"></Button>
             <Button x:Name="Sum" Click="operation_Sum" Content="="></Button>
-            <Button x:Name="Clear" Click="ClearContents" Content="Clear"></Button>
         </StackPanel>
 
         <!-- Calculator Number Buttons -->
@@ -46,9 +48,9 @@
             </StackPanel>
         </ScrollViewer>-->
 
-        <!-- Third StackPanel -->
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,100">
+        <!-- Third StackPanel --><!--
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <Button x:Name="ClearHistory" Content="Clear History"></Button>
-        </StackPanel>
+        </StackPanel>-->
     </Grid>
 </Window>
